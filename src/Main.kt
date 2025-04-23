@@ -1,3 +1,184 @@
+//1) Escreva um programa que mostre na tela a mensagem "Olá, Mundo!"
+fun olaMundo(){
+    println("Olá Mundo!")
+}
+
+//2) Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boasvindas para ela:
+//Ex:
+//Qual é o seu nome? João da Silva
+//Olá João da Silva, é um prazer te conhecer!
+
+fun nome(){
+    print("Qual é o seu nome? ")
+    val nome = readln().toString()
+    print("Olá ${nome}, é um prazer te conhecer " )
+}
+
+// 3) Crie um programa que leia o nome e o salário de um funcionário, mostrando no
+//final uma mensagem.
+//Ex:
+//Nome do Funcionário: Maria do Carmo
+//Salário: 1850,45
+//O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.
+
+fun atividade3(){
+    println("Informe aqui o seu Nome? ")
+    val nome = readln()
+    val salario = 1850.45
+    println("Olá, $nome!, seu salario é R$ ${salario}")
+}
+
+//4) Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório
+//entre eles.
+//Ex:
+//Digite um valor: 8
+//Digite outro valor: 5
+//A soma entre 8 e 5 é igual a 13.
+
+fun atividade4(){
+    println("Digite um número: ")
+    val numero1 = readln().toInt()
+    println("Digite outro número: ")
+    val numero2 = readln().toInt()
+    val soma = numero1 + numero2
+    println("A soma de ${numero1} + ${numero2} = ${soma}")
+}
+
+//5) Faça um programa que leia as duas notas de um aluno em uma matéria e mostre
+//na tela a sua média na disciplina.
+//Ex:
+//Nota 1: 4.5
+//Nota 2: 8.5
+//A média entre 4.5 e 8.5 é igual a 6.5
+fun atividade5(){
+    println("Digite a primeira Nota: ")
+    val nota1 = readln().toDouble()
+    print("Digiete a Segunda Nota: ")
+    val nota2 = readln().toDouble()
+    val result = (nota1 + nota2) / 2
+    println("A média entre ${nota1} e ${nota2} = ${result}")
+}
+
+//6) Faça um programa que leia um número inteiro e mostre o seu antecessor e seu
+//sucessor.
+//Ex:
+//Digite um número: 9
+//O antecessor de 9 é 8
+//O sucessor de 9 é 10
+
+fun atividade6(){
+    print("informe um número inteiro e mostre o seu antecessor e seu sucessor. ")
+    val numero1 = readln().toInt()
+    println("O numero é ${numero1} seu antecessor é ${numero1-1} e seu sucessor é ${numero1+1}")
+}
+
+//7) Crie um algoritmo que leia um número real e mostre na tela o seu dobro e a
+//sua terça parte.
+//Ex:
+//Digite um número: 3.5
+//O dobro de 3.5 é 7.0
+//A terça parte de 3.5 é 1.16666
+
+fun atividade7(){
+    println("Digite um número real e mostre na tela o seu dobro e a sua terça parte.")
+    val numero = readln().toDouble()
+
+    val dobro = numero * 2
+    val tercaParte = numero / 3
+    println("Dobro é ${"%.2f".format(dobro)}")
+    println("Terça parte é ${"%.2f".format(tercaParte)}")
+
+}
+
+//8) Desenvolva um programa que leia uma distância em metros e mostre os valores
+//relativos em outras medidas.
+//Ex:
+//Digite uma distância em metros: 185.72
+//A distância de 85.7m corresponde a:
+//0.18572Km
+//1.8572Hm
+//18.572Dam
+//1857.2dm
+//18572.0cm
+//185720.0m
+
+fun atividade8(){
+    println("Digite uma distância em metros e mostre os valores relativos em outras medidas.")
+    val media = readln().toDouble()
+    val km = media / 1000
+    println("${media} em KM é ${km}")
+    val hm = media / 100
+    println("${media} em Hm é ${hm}")
+    val dam = media / 10
+    println("${media} em Dam é ${dam}")
+    val dm = media * 10
+    println("${media} em Dm é ${dm}")
+    val cm = media * 100
+    println("${media} em Cm é ${cm}")
+    val mm = media * 1000
+    println("${media} em mm é ${mm}")
+
+}
+
+//9) Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$)
+//e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$3,45.
+
+fun atividade9() {
+    println("Fale quantos R$ você tem na sua carteira:")
+    val reais = readln().toDouble()
+    val cotacaoDolar = 3.45
+    val emDolar = reais / cotacaoDolar
+    println("Você tem R$%.2f, que em dólar está valendo US$%.2f".format(reais, emDolar))
+}
+
+//10) Faça um algoritmo que leia a largura e altura de uma parede, calcule e
+//mostre a área a ser pintada e a quantidade de tinta necessária para o serviço,
+//sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
+
+fun atividade10() {
+    println("Informe a largura da parede (em metros):")
+    val largura = readln().toDouble()
+
+    println("Informe a altura da parede (em metros):")
+    val altura = readln().toDouble()
+
+    val area = largura * altura
+    val tintaNecessaria = area / 2
+
+    println("A área da parede é ${"%.2f".format(area)} m².")
+    println("Você vai precisar de aproximadamente ${"%.2f".format(tintaNecessaria)} litro(s) de tinta.")
+}
+
+//11) Desenvolva uma lógica que leia os valores de A, B e C de uma equação do
+//segundo grau e mostre o valor de Delta.
+
+fun atividade11(){
+    println("Informe o valor de A: ")
+    val a = readln().toInt()
+    println("Informe o valor de B: ")
+    val b = readln().toInt()
+    print("Informe o valor de C: ")
+    val c = readln().toInt()
+    println("Informe o valor de B:")
+
+    val delta = (b*b) - (4 * a * c)
+    println("o resultado de Delta é ${delta}")
+}
+
+//12) Crie um programa que leia o preço de um produto, calcule e mostre o seu
+//PREÇO PROMOCIONAL, com 5% de desconto.
+
+fun atividade12() {
+    println("Informe o preço do produto:")
+    val preco = readln().toDouble()
+
+    val desconto = preco * 0.05
+    val precoPromocional = preco - desconto
+
+    println("O valor do desconto é R$ ${"%.2f".format(desconto)}")
+
+}
+
 //13) Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o
 //seu novo salário, com 15% de aumento.
 
