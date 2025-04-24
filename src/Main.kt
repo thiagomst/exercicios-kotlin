@@ -367,24 +367,210 @@ fun atividade12() {
 //sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo
 //que: - Homens ganham 5% de desconto - Mulheres ganham 13% de desconto
 
-fun atividade23(){
-    println("Infomre aqui o seu nome: ")
-    val nome = readln()
-    println("Informe agora F para o sexo (Feminino) ou M para (Masculino): ")
-    val sexo = readln()
-    println("Informe aqui o valor das suas compras: ")
-    val valor = readln().toDouble()
+//fun atividade23(){
+//    println("Infomre aqui o seu nome: ")
+//    val nome = readln()
+//    println("Informe agora F para o sexo (Feminino) ou M para (Masculino): ")
+//    val sexo = readln()
+//    println("Informe aqui o valor das suas compras: ")
+//    val valor = readln().toDouble()
+//
+//    if(sexo == "F"){
+//        val desconto =  valor * 0.13
+//        val valorFinal = valor - desconto
+//        println("${nome}, Voce gastou R$ ${"%.2f".format(valor)} e teve um desconto de R$ ${"%.2f".format(desconto)} e vai pagar R$ ${"%.2f".format(valorFinal)}")
+//    }else if ( sexo == "M"){
+//        val desconto =  valor * 0.05
+//        val valorFinal = valor - desconto
+//        println("${nome}, Voce gastou R$ ${"%.2f".format(valor)} e teve um desconto de R$ ${"%.2f".format(desconto)} e vai pagar R$ ${"%.2f".format(valorFinal)}")
+//    }
+//}
 
-    if(sexo == "F"){
-        val desconto =  valor * 0.13
-        val valorFinal = valor - desconto
-        println("${nome}, Voce gastou R$ ${"%.2f".format(valor)} e teve um desconto de R$ ${"%.2f".format(desconto)} e vai pagar R$ ${"%.2f".format(valorFinal)}")
-    }else if ( sexo == "M"){
-        val desconto =  valor * 0.05
-        val valorFinal = valor - desconto
-        println("${nome}, Voce gastou R$ ${"%.2f".format(valor)} e teve um desconto de R$ ${"%.2f".format(desconto)} e vai pagar R$ ${"%.2f".format(valorFinal)}")
-    }
-}
+//fun atividade24() {
+//    println("Informe a distância que você deseja percorrer (em Km): ")
+//    val km = readln().toInt()
+//
+//    val preco = 0.50
+//    val preco1 = 0.45
+//
+//    if (km <= 200) {
+//        val total = km * preco
+//        println("Você vai pagar R$%.2f, pois a distância é até 200Km.".format(total))
+//    } else {
+//        val total = km * preco1
+//        println("Você vai pagar R$%.2f, pois a distância é maior que 200Km.".format(total))
+//    }
+//}
+
+
+//25) [DESAFIO] Crie um programa que leia o tamanho de três segmentos de reta.
+//Analise seus comprimentos e diga se é possível formar um triângulo com essas
+//retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento
+//de cada lado deve ser menor que a soma dos outros dois.
+//
+//fun atividade25(){
+//    println("informe para mim um valor para A: ")
+//    val a = readln().toDouble()
+//    println("informe para mim um valor para B: ")
+//    val b = readln().toDouble()
+//    println("informe para mim um valor para C: ")
+//    val c = readln().toDouble()
+//
+//    if (a < b + c && b < a + c && c < a + b){
+//        println("Desta forma é possível formar um triângulo")
+//    }
+//    else{
+//        println("Não é possível formar um triângulo")
+//
+//    }
+//
+//
+//}
+
+//-----------------------PASSO 03 - CONDIÇÕES COMPOSTAS--------------------------------------------------------------
+
+//26) Escreva um algoritmo que leia dois números inteiros e compare-os, mostrando
+//na tela uma das mensagens abaixo:
+// - O primeiro valor é o maior
+// - O segundo valor é o maior
+// - Não existe valor maior, os dois são iguais
+//
+//fun atividade26(){
+//    println("Informe aqui um valor: ")
+//    val numero1 = readln().toInt()
+//    println("Informe aqui um segundo valor: ")
+//    val numero2 = readln().toInt()
+//
+//    if(numero1 > numero2){
+//        println("O primeiro número ${numero1} é maior que o segundo número ${numero2}: ")
+//    }else if (numero1 < numero2){
+//        println("O segundo número ${numero2} é maior que o primeiro número ${numero1}")
+//    }else{
+//        println("Não existe valor maior, os dois são iguais primeiro número ${numero1} segundo número ${numero2} ")
+//    }
+//}
+
+//27) Crie um programa que leia duas notas de um aluno e calcule a sua média,
+//mostrando uma mensagem no final, de acordo com a média atingida:
+//- Média até 4.9: REPROVADO
+//- Média entre 5.0 e 6.9: RECUPERAÇÃO
+//- Média 7.0 ou superior: APROVADO
+
+//fun atividade27() {
+//    println("Informe aqui a sua primeira nota: ")
+//    val nota1 = readln().toDouble()
+//    println("Informe aqui a sua segunda nota: ")
+//    val nota2 = readln().toDouble()
+//
+//    val media = (nota1 + nota2) / 2
+//
+//    when {
+//        media <= 4.9 -> println("A média é $media. Você está REPROVADO.")
+//        media in 5.0..6.9 -> println("A média é $media. Você está de RECUPERAÇÃO.")
+//        media >= 7.0 -> println("A média é $media. Você está APROVADO.")
+//        else -> println("Média inválida.")
+//    }
+//}
+
+//fun atividade27(){
+//    println("Informe aqui a sua primeira nota: ")
+//    val nota1 = readln().toDouble()
+//    println("Informe aqui a sua segunda nota: ")
+//    val nota2 = readln().toDouble()
+//
+//    val media = (nota1 + nota2) / 2
+//
+//    if (media <= 4.9){
+//        println("A média que você atingiu foi $media. Você está REPROVADO.")
+//    }else if (media >= 5.0 && media <= 6.9){
+//        println("A média que você atingiu foi $media. Você está RECUPERAÇÃO.")
+//    }else if (media >= 7.0){
+//        println("A média que você atingiu foi $media. Você está APROVADO.")
+//
+//    }
+//}
+
+//28) Faça um programa que leia a largura e o comprimento de um terreno
+//retangular, calculando e mostrando a sua área em m². O programa também
+//deve mostrar a classificação desse terreno, de acordo com a lista abaixo:
+//- Abaixo de 100m² = TERRENO POPULAR
+//- Entre 100m² e 500m² = TERRENO MASTER
+//- Acima de 500m² = TERRENO VIP
+
+//fun atividade28(){
+//    println("Digite aqui a largura do seu terreno: ")
+//    val largura = readln().toDouble()
+//    println("Digite aqui o comprimento do seu lote: ")
+//    val comprimento = readln().toDouble()
+//
+//    val area = largura * comprimento
+//
+//    if (area < 100){
+//        println("Abaixo de 100m², tamanho do terreno ${"%.2f".format(area)}m² TERRENO POPULAR")
+//    }else if (area >= 100 && area <= 500){
+//        println("Entre 100 e 500, tamanho do terreno ${"%.2f".format(area)}m² TERRENO MASTER")
+//    }else{
+//        println("Acima de 500, o tamanho do terreno ${"%.2f".format(area)}m² TERRENO VIP")
+//    }
+//}
+
+//29) Desenvolva um programa que leia o nome de um funcionário, seu salário,
+//quantos anos ele trabalha na empresa e mostre seu novo salário, reajustado de
+//acordo com a tabela a seguir:
+//- Até 3 anos de empresa: aumento de 3%
+//- entre 3 e 10 anos: aumento de 12.5%
+//- 10 anos ou mais: aumento de 20%
+
+//fun atividade29(){
+//    println("Informe aqui seu nome: ")
+//    val nome = readln()
+//    println("Informe aqui seu salario: ")
+//    val salario = readln().toDouble()
+//    println("Informe quantos anos você trabalha na empresa ")
+//    val anos = readln().toInt()
+//    var resultado: Double = 0.0
+//    //val resultado = (anos * 0.03 && anos * 12.5 || anos * 0.20)
+//
+//    if (anos < 4){
+//        resultado = salario * 1.03
+//
+//    } else if( anos in 3..10 ){
+//        resultado = salario * 1.125
+//    } else if (anos > 10) {
+//        resultado = salario * 1.2
+//    }
+//
+//    println("${nome}, você tem ${anos} anos de empresa ")
+//    println("Seu novo salário é de: R$${resultado} ")
+//}
+
+//30) [DESAFIO] Refaça o algoritmo 25, acrescentando o recurso de mostrar que tipo
+//de triângulo será formado:
+//- EQUILÁTERO: todos os lados iguais
+//- ISÓSCELES: dois lados iguais
+//- ESCALENO: todos os lados diferentes
+
+//fun atividade30(){
+//    println("Informe para mim um valor para A: ")
+//    val a = readln().toDouble()
+//    println("Informe para mim um valor para B: ")
+//    val b = readln().toDouble()
+//    println("Informe para mim um valor para C: ")
+//    val c = readln().toDouble()
+//
+//    val triangulo = a < b + c && b < a + c && c < a + b
+//
+//    if (triangulo){
+//        if (a == b && b == c){
+//            println("EQUILÁTERO: todos os lados iguais")
+//        } else if (a == b || b == c || a == c){
+//            println("ISÓSCELES: dois lados iguais")
+//        } else {
+//            println("ESCALENO: todos os lados diferentes")
+//        }
+//    }
+//}
+
 
 fun main() {
     //atividade13()
@@ -397,5 +583,12 @@ fun main() {
     //atividade20()
     //atividade21()
     //atividade22()
-    atividade23()
+    //atividade23()
+    //atividade24()
+    //atividade25()
+    //atividade26()
+    //atividade27()
+    //atividade28()
+    //atividade29()
+    atividade30()
 }
