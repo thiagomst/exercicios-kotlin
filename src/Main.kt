@@ -1,3 +1,5 @@
+import java.awt.Stroke
+
 //1) Escreva um programa que mostre na tela a mensagem "Olá, Mundo!"
 fun olaMundo(){
     println("Olá Mundo!")
@@ -386,7 +388,11 @@ fun atividade12() {
 //    }
 //}
 
-//fun atividade24() {
+//24) Faça um algoritmo que pergunte a distância que um passageiro deseja
+//percorrer em Km. Calcule o preço da passagem, cobrando R$0.50 por Km para
+//viagens até 200Km e R$0.45 para viagens mais longas.
+
+// fun atividade24() {
 //    println("Informe a distância que você deseja percorrer (em Km): ")
 //    val km = readln().toInt()
 //
@@ -571,6 +577,207 @@ fun atividade12() {
 //    }
 //}
 
+//31) [DESAFIO] Crie um jogo de JoKenPo (Pedra-Papel-Tesoura)
+//
+//fun atividade31() {
+//    println("Jogador numero 1 informe seu nome")
+//    val nome = readln()
+//    println(
+//        """
+//        "${nome} escolha uma jogada: pedra papel e tesoura:"
+//        1 - pedra
+//        2 - papel
+//        3 - tesoura
+//        """
+//    )
+//    var jogador1 = readln()
+//
+//    println("Jogador numero 2 informe seu nome")
+//    val nome1 = readln()
+//
+//    println(
+//        """
+//        "${nome1} escolha uma jogada: pedra papel e tesoura:"
+//        1 - pedra
+//        2 - papel
+//        3 - tesoura
+//        """
+//    )
+//    val jogador2 = readln()
+//
+//    if (jogador1 == jogador2) {
+//        println("Empate!")
+//    } else {
+//        if (jogador1 == "1" && jogador2 == "2") {
+//            println("$nome1 venceu: Papel cobre Pedra")
+//        } else if (jogador1 == "1" && jogador2 == "3") {
+//            println("$nome venceu: Pedra quebra Tesoura")
+//        }
+//        else if (jogador1 == "2" && jogador2 == "1") {
+//            println("$nome venceu: Papel cobre Pedra")
+//        }
+//        else if (jogador1 == "2" && jogador2 == "3") {
+//            println("$nome1 venceu: Tesoura corta Papel")
+//        }
+//        else if (jogador1 == "3" && jogador2 == "1") {
+//            println("$nome1 venceu: Pedra quebra Tesoura")
+//        }
+//        else if (jogador1 == "3" && jogador2 == "2") {
+//            println("$nome venceu: Tesoura corta Papel")
+//        }
+//    }
+//
+
+//32) [DESAFIO] Crie um jogo onde o computador vai sortear um número entre 1 e 5 o
+//jogador vai tentar descobrir qual foi o valor sorteado.
+//
+//fun atividade32(){
+//    println("Informe seu nome: ")
+//    val nome = readln()
+//    println("Descubra o número de 1 ao 5")
+//    var numero = readln().toIntOrNull()
+//
+//    if (numero == null || numero !in 1..5){
+//        println("Número inválido! Digite um número entre 1 e 5.")
+//        return
+//    }
+//
+//    val maquina = (1..5).random()
+//
+//    if (numero == maquina){
+//        println("${nome}, Parabéns o número ${numero} é o mesmo número da maquina ${maquina}")
+//    }else if (numero != maquina){
+//        println("O número ${numero} é diferente do número da maquina ${maquina}")
+//    }
+//}
+
+//33) Escreva um programa para aprovar ou não o empréstimo bancário para a compra
+//de uma casa. O programa vai perguntar o valor da casa, o salário do comprador e
+//em quantos anos ele vai pagar. Calcule o valor da prestação mensal, sabendo que
+//ela não pode exceder 30% do salário ou então o empréstimo será negado.
+//
+//fun atividade33(){
+//    println("Informe aqui o valor da casa que você deseja compra: ")
+//    val valor = readln().toDouble()
+//    println("Informe aqui o salario que você recebe")
+//    val salario = readln().toDouble()
+//    println("Em quantos meses você vai pagar: ")
+//    val meses = readln().toInt()
+//
+//    val  prestacaoMes = valor /meses
+//    val porcentagemGasta = (prestacaoMes / salario) * 100
+//    val limite = salario * 0.30
+//
+//    if(prestacaoMes > limite){
+//        println("O seu empréstimo foi negado. O limite é de R$ %.2f, seu salário é R$ %.2f e o valor da prestação mensal é R$ %.2f"
+//            .format(limite, salario, prestacaoMes))
+//    }else {
+//        println("Seu empréstimo foi aceito! Você comprometeu ${"%.2f".format(porcentagemGasta)}% do seu salário. Salário: R$${"%.2f".format(salario)}, Prestação: R$${"%.2f".format(prestacaoMes)}.")
+//    }
+//
+//}
+
+//34) O Índice de Massa Corpóral (IMC) é um valor calculado baseado na altura e no
+//peso de uma pessoa. De acordo com o valor do IMC, podemos classificar o
+//indivíduo dentro de certas faixas.
+//- abaixo de 18.5: Abaixo do peso
+//- entre 18.5 e 25: Peso ideal
+//- entre 25 e 30: Sobrepeso
+//- entre 30 e 40: Obesidade
+//- acima de 40: Obseidade mórbida
+//Obs: O IMC é calculado pela expressão peso/altura² (peso dividido pelo quadrado
+//da altura)
+//
+//fun atividade34() {
+//    println("Informe o seu peso: ")
+//    val peso = readln().toDouble()
+//    println("Informe a sua altura: ")
+//    val altura = readln().toDouble()
+//
+//    val imc = peso / (altura * altura)
+//
+//    if (imc >= 18.5 && imc <= 25) {
+//        println("Você está no Peso Ideal")
+//    } else if (imc > 25 && imc < 30) {
+//        println("Você está com Sobrepeso")
+//    } else if (imc in 30.0..40.0) {
+//        println("Você está Obeso")
+//    } else if (imc > 40) {
+//        println("Você está com Obesidade Mórbida")
+//    } else {
+//        println("Você está Abaixo do Peso sua altura é ${altura} e sueu peso é ${peso}")
+//    }
+//}
+
+//35) Uma empresa de aluguel de carros precisa cobrar pelos seus serviços. O
+//aluguel de um carro custa R$90 por dia para carro popular e R$150 por dia para
+//carro de luxo. Além disso, o cliente paga por Km percorrido. Faça um programa
+//que leia o tipo de carro alugado (popular ou luxo), quantos dias de aluguel e
+//quantos Km foram percorridos. No final mostre o preço a ser pago de acordo com a
+//tabela a seguir:
+
+//- Carros populares (aluguel de R$90 por dia)
+//- Até 100Km percorridos: R$0,20 por Km
+//- Acima de 100Km percorridos: R$0,10 por Km
+
+//- Carros de luxo (aluguel de R$150 por dia)
+//- Até 200Km percorridos: R$0,30 por Km
+//- Acima de 200Km percorridos: R$0,25 por Km
+
+fun atividade35() {
+    var diaria: Int
+    var carro: String
+
+    println(
+        """
+        Informe o modelo de carro que você alugou:
+        1 - Popular
+        2 - Luxo
+        """.trimIndent()
+    )
+
+    val tipoCarro = readln().toInt()
+
+    when (tipoCarro) {
+        1 -> println("Você escolheu alugar um carro Popular.")
+        2 -> println("Você escolheu alugar um carro de Luxo.")
+        else -> {
+            println("Opção inválida. Escolha 1 para Popular ou 2 para Luxo.")
+            return
+        }
+    }
+
+    println("Digite quantos dias você ficou com o carro alugado:")
+    val dias = readln().toInt()
+
+    println("Digite quantos km você percorreu com o carro:")
+    val km = readln().toDouble()
+
+    if (tipoCarro == 1) {
+        carro = "popular"
+        diaria = 90
+    } else {
+        carro = "luxo"
+        diaria = 150
+    }
+
+    val valorAluguel = diaria * dias
+
+    val tarifaPorKm = when {
+        tipoCarro == 1 && km <= 100 -> 0.20
+        tipoCarro == 1 && km > 100 -> 0.10
+        tipoCarro == 2 && km <= 200 -> 0.30
+        else -> 0.25
+    }
+
+    val valorKm = km * tarifaPorKm
+    val total = valorAluguel + valorKm
+
+    println("Você alugou um carro $carro por $dias dias e percorreu $km km.")
+    println("Valor do aluguel: R$ %.2f".format(valorAluguel.toDouble()))
+    println("Valor por km rodado: R$ %.2f".format(valorKm))
+    println("Total a pagar: R$ %.2f".format(total))
+}
 
 fun main() {
     //atividade13()
@@ -590,5 +797,10 @@ fun main() {
     //atividade27()
     //atividade28()
     //atividade29()
-    atividade30()
+    //atividade30()
+    //atividade31()
+    //atividade32()
+    //atividade33()
+    //atividade34()
+    atividade35()
 }
