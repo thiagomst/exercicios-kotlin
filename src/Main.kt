@@ -779,6 +779,28 @@ fun atividade35() {
     println("Total a pagar: R$ %.2f".format(total))
 }
 
+// REQUISIÇÃO DE HTTPS
+import java.net.HttpURLConnection
+import java.net.URL
+
+fun fazerRequisicao(url: String): String {
+    val conexao = URL(url).openConnection() as HttpURLConnection
+
+    try {
+        conexao.requestMethod = "GET"
+        conexao.connectTimeout = 5000
+        conexao.readTimeout = 5000
+
+        if (conexao.responseCode != HttpURLConnection.HTTP_OK) {
+            throw Exception("Erro HTTP ${conexao.responseCode}")
+        }
+
+        return conexao.inputStream.bufferedReader().use { it.readText() }
+    } finally {
+        conexao.disconnect()
+    }
+}
+
 fun main() {
     //atividade13()
     //atividade14()
@@ -803,4 +825,7 @@ fun main() {
     //atividade33()
     //atividade34()
     atividade35()
+    val url = "https://pokeapi.co/api/v2/pokemon?limit=10\n" +
+            "\n"
+    println(fazerRequisicao(url))
 }
